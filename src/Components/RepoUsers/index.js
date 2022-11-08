@@ -5,29 +5,32 @@ const RepoUsers = ({ userRepoData }) => {
 
     return (
         <Container>
-            {userRepoData.length > 0 && userRepoData.map((repo, index) => {
-                return (
-                    <React.Fragment key={index}>
-                        <div>
+            {userRepoData.length > 0 ?
+                userRepoData.map((repo, index) => {
+                    return (
+                        <React.Fragment key={index}>
                             <div>
-                                <h3 >
-                                    <a href="https://github.com/mojombo/erlectricity">
-                                        {repo?.name}</a>
-                                    &nbsp;  &nbsp;  &nbsp;
-                                    <span>{repo?.visibility}</span>
-                                </h3>
-                            </div>
+                                <div>
+                                    <h3 >
+                                        <a href={repo?.html_url}>
+                                            {repo?.name}</a>
+                                        &nbsp;  &nbsp;  &nbsp;
+                                        <span>{repo?.visibility}</span>
+                                    </h3>
+                                </div>
 
-                            <div>
-                                <p>
-                                    {repo?.description}
-                                </p>
+                                <div>
+                                    <p>
+                                        {repo?.description}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <br />
-                    </React.Fragment>
-                )
-            })
+                            <br />
+                        </React.Fragment>
+                    )
+                })
+                :
+                <h6>No Data Found</h6>
             }
         </Container>
     )
