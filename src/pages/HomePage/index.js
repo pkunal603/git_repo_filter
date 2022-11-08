@@ -38,7 +38,7 @@ const HomePage = () => {
             const userRepoRes = await fetch(`https://api.github.com/users/${uname}/repos?page=${page}`,
                 {
                     headers: {
-                        'Authorization': 'token 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',
+                        'Authorization': 'token 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',
                     }
                 }
             )
